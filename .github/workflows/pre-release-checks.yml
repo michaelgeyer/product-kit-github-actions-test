@@ -19,7 +19,7 @@ jobs:
         uses: dangoslen/changelog-enforcer@v3
         with:
           skipLabels: "skip-changelog"
-          expectedLatestVersion: ${{ steps.read-version.outputs.tag }}
+          expectedLatestVersion: v${{ steps.read-version.outputs.tag }}
       # - name: Get current version
       #   id: package-version
       #   uses: martinbeentjes/npm-get-version-action@main
