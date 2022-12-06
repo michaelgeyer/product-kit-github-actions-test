@@ -18,7 +18,7 @@ jobs:
       - name: Check CHANGELOG
         uses: dangoslen/changelog-enforcer@v3
         with:
-          expectedLatestVersion: ${{ steps.read-version.outputs.tag }}
+          expectedLatestVersion: '${{ steps.read-version.outputs.tag }}'
           missingUpdateErrorMessage: Update CHANGELOG required!
 
       
