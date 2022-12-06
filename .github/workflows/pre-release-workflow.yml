@@ -44,8 +44,8 @@ jobs:
           label: enhancement
           milestone: My milestone
           draft: true
-          old_string: "<!-- Add your description here -->"
-          new_string: "** Automatic pull request**"
+          # old_string: "<!-- Add your description here -->"
+          # new_string: "** Automatic pull request**"
           get_diff: true
-          ignore_users: "dependabot"
+          # ignore_users: "dependabot"
           allow_no_diff: false
