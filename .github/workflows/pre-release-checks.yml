@@ -1,0 +1,22 @@
+name: Pre Release checks
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  check-changelog:
+    needs: update-version
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout develop branch
+        uses: actions/checkout@v3
+        with: 
+          ref: develop
+      - name: Check CHANGELOG
+        uses: dangoslen/changelog-enforcer@v3
+        with:
+          expectedLatestVersion: ${{ github.event.inputs.version }}
+          missingUpdateErrorMessage: Update CHANGELOG required!
+
+      
