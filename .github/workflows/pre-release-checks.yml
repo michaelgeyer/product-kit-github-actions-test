@@ -19,7 +19,6 @@ jobs:
         uses: mindsers/changelog-reader-action@v2
         with:
           version: v${{ steps.package-version.outputs.current-version}}
-          path: ./CHANGELOG.md
-          validation_level: warn
+          validation_level: error
 
       
