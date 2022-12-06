@@ -20,7 +20,6 @@ jobs:
         with:
           expectedLatestVersion: 'v${{ steps.package-version.outputs.current-version}}'
           missingUpdateErrorMessage: Update CHANGELOG required!
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       
