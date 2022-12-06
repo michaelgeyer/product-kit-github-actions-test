@@ -6,15 +6,9 @@ on:
       version:
         description: 'Set release version'
         required: true
-      branch: 
-        description: 'Branch'
-        default: 'develop'
   workflow_call:
     inputs:
       version:
-        type: string
-        required: true
-      branch: 
         type: string
         required: true
 
@@ -24,6 +18,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        with: 
+          ref: develop
       - name: Setup node
         uses: actions/setup-node@v3
         with:
