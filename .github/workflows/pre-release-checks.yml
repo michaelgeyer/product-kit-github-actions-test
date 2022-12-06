@@ -18,6 +18,8 @@ jobs:
       - name: Check CHANGELOG
         uses: mindsers/changelog-reader-action@v2
         with:
-          version: "${{ steps.package-version.outputs.current-version}}"    
+          version: "${{ steps.package-version.outputs.current-version}}"
+          path: ./CHANGELOG.md
+          validation_level: warn
 
       
