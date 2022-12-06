@@ -6,7 +6,6 @@ on:
 
 jobs:
   check-changelog:
-    needs: update-version
     runs-on: ubuntu-latest
     steps:
       - name: Checkout develop branch
