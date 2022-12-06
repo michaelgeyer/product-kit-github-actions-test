@@ -17,19 +17,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Setup node
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: 16
       - name: Update package version
         run: npm version ${{ github.event.inputs.version }} --no-git-tag-version --allow-same-version
-      - name: ☁ Commit Changes
-        uses: EndBug/add-and-commit@v7
+      - name: Commit and push changes
+        uses: devops-infra/action-commit-push@master
         with:
-          author_name: Product Kit Pre Release Bot
-          author_email: ci@automate.bot
-          message: "Update version to v${{ github.event.inputs.version }}"
-          add: "package*"
-        # env:
-        #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          commit_message: Update version to v${{ github.event.inputs.version }}
