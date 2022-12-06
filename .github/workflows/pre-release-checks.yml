@@ -16,7 +16,7 @@ jobs:
         run: |
           echo "::set-output name=version::$(jq -r ".version" package.json)"
       - id: changelog-enforcer
-        uses: ./
+        uses: dangoslen/changelog-enforcer@v3
         with:
           skipLabels: "skip-changelog"
           expectedLatestVersion: ${{ steps.read-version.outputs.tag }}
