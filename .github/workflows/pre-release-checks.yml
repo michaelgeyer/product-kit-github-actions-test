@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout develop branch
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
         with: 
           ref: develop
       - name: Get current version
@@ -19,6 +19,6 @@ jobs:
         uses: dangoslen/changelog-enforcer@v3
         with:
           expectedLatestVersion: 'v${{ steps.package-version.outputs.current-version}}'
-          missingUpdateErrorMessage: Update CHANGELOG required!
+          # missingUpdateErrorMessage: Update CHANGELOG required!
 
       
