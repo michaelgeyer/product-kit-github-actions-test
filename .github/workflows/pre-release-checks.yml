@@ -20,6 +20,6 @@ jobs:
         with:
           version: v${{ steps.package-version.outputs.current-version}}
           path: ./CHANGELOG.md
-          validation_level: error
+          validation_level: warn
 
       
