@@ -3,8 +3,9 @@ name: Pre release workflow
 on:
   workflow_dispatch:
     inputs:
-      description: 'Set release version'
-      required: true
+      version:
+        description: 'Set release version'
+        required: true
   workflow_call:
     inputs:
       version:
