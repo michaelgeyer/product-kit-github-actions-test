@@ -27,13 +27,13 @@ jobs:
           source_branch: develop
           target_branch: main
           title: Release v${{ github.event.inputs.version }}
-          # template: .github/PULL_REQUEST_TEMPLATE.md
+          template: .github/PULL_REQUEST_TEMPLATE/release_template.md
           # body: "**Automated pull request**"
           # reviewer: michaelgeyer
           # assignee: michaelgeyer
           # label: enhancement
           # milestone: My milestone
-          # draft: true
+          draft: true
           # old_string: "<!-- Add your description here -->"
           # new_string: "** Automatic pull request**"
           # get_diff: true
