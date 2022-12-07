@@ -23,7 +23,7 @@ jobs:
       - id: check # This will be the reference for getting the outputs.
         uses: EndBug/version-check@v2 # You can choose the version/branch you prefer.
         with:
-          # file-url:  https://unpkg.com/gm-log-test/package.json
+          file-url: https://raw.githubusercontent.com/michaelgeyer/product-kit-github-actions-test/main/package.json
           assume-same-version: old
       - name: Fail if unchanged  
         if: steps.check.outputs.changed == 'false'
