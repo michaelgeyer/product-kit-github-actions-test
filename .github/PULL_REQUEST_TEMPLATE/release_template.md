@@ -1,5 +1,5 @@
 ## Pre Release ToDos
 
-- [ ] Change package.json version to xxx
-- [ ] Update the CHANGELOG.md
-- [ ] Update 3RD_PARTY_LICENSES.txt using Black Duck
+- [ ] Update `package.json` version according to PR title
+- [ ] Update the `CHANGELOG.md`
+- [ ] Update `3RD_PARTY_LICENSES.txt` using Black Duck Scan

@@ -9,7 +9,29 @@ on:
       - main
 
 jobs:
+  check-version:
+    runs-on: ubuntu-latest
+    stepts:
+      - name: Checkout develop branch
+        uses: actions/checkout@v3
+        with: 
+          ref: develop
+      - name: Setup node
+        with:
+          node-version: 16
+      - id: check # This will be the reference for getting the outputs.
+        uses: EndBug/version-check@v2 # You can choose the version/branch you prefer.
+        with:
+          # file-url:  https://unpkg.com/gm-log-test/package.json
+          assume-same-version: old
+      - name: Fail if unchanged  
+        if: steps.check.outputs.changed == 'false'
+        run: |
+          echo "No version change :/"'
+          exit: 1
+        
   check-changelog:
+    needs: check-version
     runs-on: ubuntu-latest
     steps:
       - name: Checkout develop branch
