@@ -1,5 +1,9 @@
 name: Pre Release checks
 on:
+  workflow_run:
+    workflows: ['Pre release workflow']
+    types:
+      - completed
   pull_request:
     branches:
       - main
