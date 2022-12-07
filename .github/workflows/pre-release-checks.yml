@@ -17,6 +17,7 @@ jobs:
         with: 
           ref: develop
       - name: Setup node
+        uses: actions/setup-node@v3
         with:
           node-version: 16
       - id: check # This will be the reference for getting the outputs.
