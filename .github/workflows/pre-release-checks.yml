@@ -9,16 +9,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout develop branch
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with: 
           ref: develop
       - name: Get current version
         id: package-version
         uses: martinbeentjes/npm-get-version-action@main
       - name: Check CHANGELOG
-        uses: dangoslen/changelog-enforcer@v3
+        id: changelog-check
+        uses: mindsers/changelog-reader-action@v2
         with:
-          expectedLatestVersion: 'v${{ steps.package-version.outputs.current-version}}'
-          # missingUpdateErrorMessage: Update CHANGELOG required!
-
+          version: v${{ steps.package-version.outputs.current-version}}
+          validation_level: warn
+        if: ${{ steps.changelog_reader.outputs.version }} != ${{ steps.package-version.outputs.current-version}}
+      - uses: thollander/actions-comment-pull-request@v2
+        with:
+          message: |
+            Update CHANGELOG.md is required!
+          pr_number: ${{ github.event.number }}
       
