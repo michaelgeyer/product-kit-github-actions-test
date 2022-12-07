@@ -28,8 +28,8 @@ jobs:
           target_branch: main
           title: Release v${{ github.event.inputs.version }}
           template: .github/PULL_REQUEST_TEMPLATE/release_template.md
-          reviewer: stenanderssen
-          ignore_users: "dependabot"
+          # reviewer: stenanderssen
+          # ignore_users: "dependabot"
           # body: "**Automated pull request**"
           # assignee: michaelgeyer
           # label: enhancement
