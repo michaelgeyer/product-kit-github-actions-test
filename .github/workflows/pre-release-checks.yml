@@ -11,7 +11,7 @@ on:
 
 jobs:
   run-checks:
-    uses: michaelgeyer/github-actions-test.github/workflows/pre-release-checks.yml@main
+    uses: michaelgeyer/github-actions-test/.github/workflows/pre-release-checks.yml@main
     with:
       npm-package-url: https://raw.githubusercontent.com/michaelgeyer/product-kit-github-actions-test/main/package.json
 
