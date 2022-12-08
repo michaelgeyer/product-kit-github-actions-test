@@ -1,12 +1,17 @@
 name: Pre Release Checks
 on:
+  workflow_dispatch:
+    inputs:
+      npm-package-url:
+        description: 'NPM Package URL'
+        required: true
   # workflow_run:
   #   workflows: ['Pre release workflow']
   #   types:
   #     - completed
-  pull_request:
-    branches:
-      - main
+  # pull_request:
+  #   branches:
+  #     - main
 
 
 jobs:
