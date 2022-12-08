@@ -40,22 +40,22 @@ jobs:
           # get_diff: true
           # allow_no_diff: false
 
-  # update-version:
-  #   needs: create-pull-request 
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Checkout develop branch
-  #       uses: actions/checkout@v3
-  #       with: 
-  #         ref: develop
-  #     - name: Setup node
-  #       uses: actions/setup-node@v3
-  #       with:
-  #         node-version: 16
-  #     - name: Update package version
-  #       run: npm version ${{ github.event.inputs.version }} --no-git-tag-version --allow-same-version
-  #     - name: Commit and push changes
-  #       uses: devops-infra/action-commit-push@master
-  #       with:
-  #         github_token: ${{ secrets.GITHUB_TOKEN }}
-  #         commit_message: Update version to v${{ github.event.inputs.version }}
+  update-version:
+    needs: create-pull-request 
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout develop branch
+        uses: actions/checkout@v3
+        with: 
+          ref: develop
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Update package version
+        run: npm version ${{ github.event.inputs.version }} --no-git-tag-version --allow-same-version
+      - name: Commit and push changes
+        uses: devops-infra/action-commit-push@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          commit_message: Update version to v${{ github.event.inputs.version }}
