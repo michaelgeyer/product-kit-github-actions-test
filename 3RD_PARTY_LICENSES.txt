@@ -1,6 +1,6 @@
 Copyright 2022
 
-[product-kit-vue : 3.0.0]
+[product-kit-vue : 3.0.1]
 
 Phase: RELEASED
 Distribution: OPENSOURCE
@@ -8,7 +8,7 @@ Distribution: OPENSOURCE
 Components: 
 
 @daimler/productkit-core 2.0.0 : MIT License
-@daimler/productkit-vue 2.0.1 : MIT License
+@daimler/productkit-vue 3.0.1 : MIT License
 
 
 Copyright Text: 
