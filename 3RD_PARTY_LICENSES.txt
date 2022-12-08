@@ -1,6 +1,6 @@
 Copyright 2022
 
-[product-kit-vue : 2.0.2]
+[product-kit-vue : 2.0.0]
 
 Phase: RELEASED
 Distribution: OPENSOURCE
