@@ -12,6 +12,8 @@ on:
 jobs:
   run-checks:
     uses: mercedes-benz/product-kit_actions/.github/workflows/pre-release-checks.yml@main
+    with:
+      npm-package-url: https://raw.githubusercontent.com/michaelgeyer/product-kit-github-actions-test/main/package.json
 
 # jobs:
 #   check-version:
